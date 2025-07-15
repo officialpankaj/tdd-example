@@ -20,4 +20,7 @@ describe("StringCalculator", () => {
   it("supports custom delimiters defined in the format //delimiter\\n", () => {
     expect(add("//;\n1;2")).toBe(3);
   });
+  it("throws an error when negative numbers are provided", () => {
+    expect(() => add("1,-2,-3")).toThrow("Negatives not allowed: -2, -3");
+  });
 });
